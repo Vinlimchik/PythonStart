@@ -32,8 +32,8 @@ while num != "show all list":
         nem = input("Enter index what element you want to redact: " )
         del challenge_list[int(nem)]
         x = input()
-        x = nem
-        #print(challenge_list[int(nem)])
+        nem = x
+        challenge_list.append(nem)
         num = input("Choose a command: +, - , show element, show all list: ")
         
     elif num != "+, - , show element, show all list: ":
