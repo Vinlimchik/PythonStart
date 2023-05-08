@@ -164,7 +164,7 @@ while nom != "exit":
 if nom == "exit":
     r = input("Do you want to save calculation?: ")
     if r == "yes":
-        file = open("meow.txt",'w')
+        file = open("results.txt",'w')
         if x != 0:
             file.write(str(x))
             file.write(" - ")
