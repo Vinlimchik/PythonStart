@@ -1,4 +1,4 @@
-nom = input("select operation: +, -, *, /, //, !, √^2, √^3, ^n, save, exit, save and exit: ")
+nom = input("select operation: +, -, *, /, //, !, √^2, √^3, ^n, save, exit: ")
 num = 1
 nim = 1
 nym = 1
@@ -98,7 +98,7 @@ while nom != "exit":
     
 #save
     elif nom == "save":
-        file = open("meow.txt",'w')
+        file = open("results.txt",'w')
         if x != 0:
             file.write(str(x))
             file.write(" - ")
