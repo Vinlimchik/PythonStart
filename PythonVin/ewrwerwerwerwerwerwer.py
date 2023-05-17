@@ -1,10 +1,11 @@
+#Variables
 o = "0"
 x = 0
 y = 0
 num = 0
 
-
-pole = [["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
+#massive
+field = [["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
             ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
             ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
             ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
@@ -15,53 +16,75 @@ pole = [["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
             ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
             ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"]]
 
-pole[x][y] = o
+field[x][y] = o
 
-for i in pole:
-    for t in i:
-        print(t,end='')
+for line in field:
+    for i in line:
+        print(i,end='')
     print()
+num = input("Enter command: w, a, s, d or exit: ")
 
+#Cycle
 while num!= "exit":
-    if num == "right":
-        y = y + 1
-        pole[x][y] = o
-        num = input("Enter command: right, left, up, down or exit: ")
-        for i in pole:
-            for t in i:
-                print(t,end='')
-        print()
-
-    if num == "left":
-        y = y - 1
-        pole[x][y] = o
-        num = input("Enter command: right, left, up, down or exit: ")
-        for i in pole:
-            for t in i:
-                print(t,end='')
-        print()
-
-    if num == "up":
-        x = x + 1
-        pole[x][y] = o
-        num = input("Enter command: right, left, up, down or exit: ")
-        for i in pole:
-            for t in i:
-                print(t,end='')
-        print()
     
-    if num == "down":
-        x = x - 1
-        pole[x][y] = o
-        num = input("Enter command: right, left, up, down or exit: ")
-        for i in pole:
-            for t in i:
-                print(t,end='')
-        print()
+#W
+    if num == "w":
+        if x > 0:
+            x = x - 1
+            field[x][y] = o
+            field[x+1][y] = "*"
+        else:
+            print("Wrong!")
+        field[x][y] = o
+        field[x+1][y] = "*"
+        for line in field:
+            for i in line:
+                print(i,end='')
+            print()
+        num = input("Enter command: w, a, s, d or exit: ")
 
-    if num != "right" or "left" or "up" or "down" or "exit":
-        print("Wrong!")
-        num = input("Enter command: right, left, up, down or exit: ")
+#A
+    if num == "a":
+        if y > 0:
+            y = y - 1
+            field[x][y] = o
+            field[x][y+1] = "*"
+        else:
+            print("Wrong!")
+        for line in field:
+            for i in line:
+                print(i,end='')
+            print()
+        num = input("Enter command: w, a, s, d or exit: ")
+
+#S  
+    if num == "s":
+        if x < 9:
+            x = x + 1
+            field[x][y] = o
+            field[x-1][y] = "*"
+        else:
+            print("Wrong!")
+        for line in field:
+            for i in line:
+                print(i,end='')
+            print()
+        num = input("Enter command: w, a, s, d or exit: ")
+
+#D
+    if num == "d":
+        if y < 9:
+            y = y + 1
+            field[x][y] = o
+            field[x][y-1] = "*"
+        else:
+            print("Wrong!")
+        for line in field:
+            for i in line:
+                print(i,end='')
+            print()
+        num = input("Enter command: w, a, s, d or exit: ")
         
+#Exit
 if num == "exit":
     print("Arevouar, Shoshanna!")
