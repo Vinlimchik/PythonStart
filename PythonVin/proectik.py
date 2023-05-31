@@ -161,6 +161,7 @@ while nom != "exit":
         print("Wrong!")
         nom = input("select operation: +, -, *, /, //, !, √^2, √^3, ^n, save, exit: ")
         
+#exit
 if nom == "exit":
     r = input("Do you want to save calculation?: ")
     if r == "yes":
@@ -221,4 +222,4 @@ if nom == "exit":
             
         file.close()
     else:
-        print("ok, meow")
+        print("ok")
